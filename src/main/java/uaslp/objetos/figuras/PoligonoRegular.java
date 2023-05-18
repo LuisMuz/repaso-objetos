@@ -1,13 +1,16 @@
 package uaslp.objetos.figuras;
 
+import uaslp.objetos.exception.NumeroInvalidoDeLados;
+
 import static java.lang.Math.*;
 
 public class PoligonoRegular extends Figura{
     private final int lados;
     private double lado;
 
-    public PoligonoRegular(int lados){
+    public PoligonoRegular(int lados) throws NumeroInvalidoDeLados {
         super("Poligono Regular","Poligono");
+        if(lados < 5) throw new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
         this.lados = lados;
     }
 
@@ -37,5 +40,10 @@ public class PoligonoRegular extends Figura{
             theta = toRadians(theta);
             return lado/(2*tan(theta));
 
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("■");
     }
 }

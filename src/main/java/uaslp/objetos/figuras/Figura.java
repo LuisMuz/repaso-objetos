@@ -1,6 +1,6 @@
 package uaslp.objetos.figuras;
 
-public class Figura implements DrawableItem{
+public abstract class Figura implements DrawableItem{
     private final String name;
     private final String description;
 
@@ -15,9 +15,5 @@ public class Figura implements DrawableItem{
 
     public String getDescription() {
         return description;
-    }
-
-    public void draw(){
-        System.out.println("si");
     }
 }
